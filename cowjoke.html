@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cow Joke Generator</title>
+  <style>
+    body {
+      background: #f0fff0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fffbea;
+      border: 3px dashed #8b5e3c;
+      border-radius: 20px;
+      padding: 30px 40px;
+      text-align: center;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+      max-width: 500px;
+    }
+
+    h1 {
+      color: #5c4033;
+      margin-bottom: 20px;
+    }
+
+    #joke {
+      font-size: 1.3rem;
+      color: #333;
+      min-height: 60px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #a3d977;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #8fc766;
+    }
+
+    .cow-emoji {
+      font-size: 3rem;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cow Joke Generator 🐮</h1>
+    <div id="joke">Click the button to hear a mooo-tastic joke!</div>
+    <button onclick="generateJoke()">Tell Me a Joke</button>
+    <div class="cow-emoji">🐄</div>
+  </div>
+
+  <script>
+    const jokes = [
+      "Why do cows wear bells? Because their horns don't work!",
+      "What do you call a cow with no legs? Ground beef.",
+      "What do cows do on a Friday night? Go to the moo-vies!",
+      "Why did the cow cross the road? To get to the udder side!",
+      "What do you call a sleeping cow? A bulldozer.",
+      "What do you call a cow that can play a musical instrument? A moo-sician!",
+      "How does a cow stay up to date? It reads the moos-paper.",
+      "What did the cow say to the calf? It's pasture bedtime!"
+    ];
+
+    function generateJoke() {
+      const joke = jokes[Math.floor(Math.random() * jokes.length)];
+      document.getElementById('joke').textContent = joke;
+    }
+  </script>
+</body>
+</html>
+
